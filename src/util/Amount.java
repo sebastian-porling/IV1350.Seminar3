@@ -1,16 +1,20 @@
 package util;
 
 /**
- * Describes the amount of something. In this case an integer.
+ * Represent the amount of money.
  */
 public class Amount {
-    int amount;
+    private int amount;
 
     /**
-     * Creates an object that describes the amount of something.
-     * @param amount amount of something as an integer.
+     * Creates an instance, representing the specified amount.
+     * @param amount The amount represented by the newly created instance.
      */
     public Amount(int amount){
         this.amount = amount;
+    }
+
+    public int getAmount() {
+        return amount;
     }
 }
