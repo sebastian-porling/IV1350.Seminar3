@@ -1,5 +1,7 @@
 package util;
 
+import java.util.Objects;
+
 /**
  * Represents an identification of a customer.
  */
@@ -15,7 +17,27 @@ public class CustomerIdentification {
         this.customerIdentificationNumber = customerIdentificationNumber;
     }
 
+    /**
+     * Get the value of customerIdentificationNumber.
+     *
+     * @return The value of costumerIdentificationNumber.
+     */
     public String getCustomerIdentificationNumber() {
         return customerIdentificationNumber;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null){
+            return false;
+        }
+        if (getClass() != obj.getClass()){
+            return false;
+        }
+        final CustomerIdentification other = (CustomerIdentification) obj;
+        if (!Objects.equals(this.customerIdentificationNumber, other.customerIdentificationNumber)) {
+            return false;
+        }
+        return true;
     }
 }
