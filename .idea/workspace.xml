@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6de9de5c-34a7-4efb-a8a8-e0888db9eeae" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/se.kth.iv1350.pos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/se.kth.iv1350.pos.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/AccountingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/AccountingSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/CatalogCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/CatalogCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/DiscountCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/DiscountCatalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/InventorySystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/InventorySystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/ItemCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/ItemCatalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/ItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/ItemDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/Printer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/SystemCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/SystemCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
-    </list>
+    <list default="true" id="6de9de5c-34a7-4efb-a8a8-e0888db9eeae" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -303,12 +289,12 @@
       <workItem from="1525177946163" duration="15000" />
       <workItem from="1525178036676" duration="65000" />
       <workItem from="1525178182887" duration="19827000" />
-      <workItem from="1525341738106" duration="7578000" />
+      <workItem from="1525341738106" duration="7687000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29688000" />
+    <option name="totallyTimeSpent" value="29797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="40" width="1880" height="1140" extended-state="0" />
