@@ -27,9 +27,10 @@ public class Amount {
     }
 
     /**
+     * Checks if the specified amount is equal to this amount.
      *
-     * @param obj
-     * @return
+     * @param obj The specified amount
+     * @return <code>false</code> if it's not the same kind of object or class or amount is not the same. <code>true</code> otherwise.
      */
     @Override
     public boolean equals(Object obj) {
@@ -46,11 +47,41 @@ public class Amount {
         return true;
     }
 
+    /**
+     * Will subtract with the specified <code>Amount</code>
+     *
+     * @param other The specified <code>Amount</code>
+     * @return The difference of this <code>Amount</code> with the other <code>Amount</code>
+     */
     public Amount minus(Amount other){
         return new Amount(this.amount - other.amount);
     }
 
+    /**
+     * Will add with the specified <code>Amount</code>
+     *
+     * @param other The specified <code>Amount</code>
+     * @return The sum of this <code>Amount</code> with the other <code>Amount</code>
+     */
     public Amount plus(Amount other){
-        return new Amount(this.amount - other.amount);
+        return new Amount(this.amount + other.amount);
+    }
+
+    /**
+     * Will multiply with the specified <code>Amount</code>
+     *
+     * @param other The specified <code>Amount</code>
+     * @return The product of this <code>Amount</code> with the other <code>Amount</code>
+     */
+    public Amount multiply(Amount other){ return new Amount(this.amount * other.amount);}
+
+    /**
+     * Makes the <code>Amount</code> into a <code>String</code> object.
+     *
+     * @return <code>Amount</code> as a <code>String</code>.
+     */
+    @Override
+    public String toString() {
+        return Integer.toString(amount);
     }
 }

@@ -26,6 +26,11 @@ public class CustomerIdentification {
         return customerIdentificationNumber;
     }
 
+    /**
+     * Checks if this instance is equal to another instance.
+     * @param obj The other instance.
+     * @return <code>true</code> if all attributes are the same, the same class and if it is not null. <code>false</code> otherwise.
+     */
     @Override
     public boolean equals(Object obj) {
         if (obj == null){
