@@ -24,6 +24,24 @@ public class Item {
     }
 
     /**
+     * Will increase the quantity of items with the specified <code>Amount</code>
+     *
+     * @param otherQuantity The <code>Amount</code> that will be added to the quantity.
+     */
+    public void increaseQuantity(Amount otherQuantity){
+        this.quantity.plus(otherQuantity);
+    }
+
+    /**
+     * Will decrease the quantity of items with the specified <code>Amount</code>
+     *
+     * @param otherQuantity The <code>Amount</code> that will be subtracted to the quantity.
+     */
+    public void decreaseQuantity(Amount otherQuantity){
+        this.quantity.minus(otherQuantity);
+    }
+
+    /**
      * Get the value of quantity.
      *
      * @return The value of quantity.
@@ -50,6 +68,11 @@ public class Item {
         return itemIdentifier;
     }
 
+    /**
+     * Turns instance into a <code>String</code>
+     *
+     * @return The instance as a <code>String</code>
+     */
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();

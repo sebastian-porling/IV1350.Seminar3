@@ -53,16 +53,16 @@ public class ItemDTO {
     }
 
     /**
-     * Turns the instance into a string.
+     * Turns the instance into a <code>String</code>.
      *
-     * @return The instance as a String.
+     * @return The instance as a <code>String</code>.
      */
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("item name: " + itemName);
-        builder.append("price: " + price);
-        builder.append("tax amount: " + taxAmount);
+        builder.append("item name: " + itemName + "\t");
+        builder.append("price: " + price + "\t");
+        builder.append("tax amount: " + taxAmount + "\t");
         return builder.toString();
     }
 

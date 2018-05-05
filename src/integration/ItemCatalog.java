@@ -8,7 +8,7 @@ import java.util.HashMap;
  * Represents a dummy item database.
  */
 public class ItemCatalog {
-    HashMap<String, ItemDTO> itemList;
+    HashMap<String, ItemDTO> itemList = new HashMap<>();
 
     /**
      *  Creates a instance of a dummy item database.
@@ -23,7 +23,7 @@ public class ItemCatalog {
      * @param itemIdentifier The looked item.
      * @return If item exists <code>true</code> else <code>false</code>
      */
-    public boolean lookUpItem(String itemIdentifier){
+    public boolean itemExists(String itemIdentifier){
         return itemList.containsKey(itemIdentifier);
     }
 
@@ -33,10 +33,10 @@ public class ItemCatalog {
      *
      * @param itemIdentifier The identifier of an item.
      * @param quantity The amount of items.
-     * @return An item with it's itemDescription and quantity.
+     * @return An item with it's itemDescription and quantity or null if the identifier didn't exist..
      */
     public Item getItem(String itemIdentifier, Amount quantity){
-        if (lookUpItem(itemIdentifier)){
+        if (itemExists(itemIdentifier)){
             return new Item(itemList.get(itemIdentifier), itemIdentifier, quantity);
         }
         return null;

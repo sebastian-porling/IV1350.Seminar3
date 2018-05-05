@@ -16,10 +16,20 @@ public class SystemCreator {
         inventorySystem = new InventorySystem();
     }
 
+    /**
+     * Gets the value of accountingSystem.
+     *
+     * @return The value of accountingSystem.
+     */
     public AccountingSystem getAccountingSystem() {
         return accountingSystem;
     }
 
+    /**
+     * Gets the value of inventorySystem.
+     *
+     * @return The value of inventorySystem.
+     */
     public InventorySystem getInventorySystem() {
         return inventorySystem;
     }
