@@ -16,7 +16,7 @@ public class Sale {
     private HashMap<String, Item> items = new HashMap<>();
 
     /**
-     *  Creates a new instance, represented as a Sale.
+     * Creates a new instance, represented as a Sale.
      */
     public Sale(){
         this.total = new Total();
@@ -41,7 +41,7 @@ public class Sale {
     }
 
     /**
-     *  Updates the current sale. Updates how many items and the running total.
+     * Updates the current sale. Updates how many items and the running total.
      *
      * @param item The item that will be added to the sale.
      * @return  The itemDescription as a string.
@@ -60,8 +60,9 @@ public class Sale {
     }
 
     /**
+     * Makes the instance into to a <code>String</code>
      *
-     * @return
+     * @return The instance as a <code>String</code>
      */
     @Override
     public String toString() {
@@ -69,10 +70,9 @@ public class Sale {
         Iterator entriesIterator = getEntries();
 
         while(entriesIterator.hasNext()) {
-            Item item = getCurrentItem();
-
-            builder.append(nextItem.getItemDescription().toString());
-            addNewLine(builder, " quantity: " + nextItem.getQuantity().toString());
+            Item item = getCurrentItem(entriesIterator);
+            builder.append(item.getItemDescription().toString());
+            addNewLine(builder, " quantity: " + item.getQuantity().toString());
         }
 
         addNewLine(builder, "Total: " + total.getTotal().toString());
@@ -86,7 +86,7 @@ public class Sale {
         return entriesIterator;
     }
 
-    private Item getNextItem(){
+    private Item getCurrentItem(Iterator entriesIterator){
         Map.Entry mapping = (Map.Entry) entriesIterator.next();
         Item item = (Item) mapping.getValue();
         return item;

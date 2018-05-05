@@ -18,8 +18,9 @@ public class Receipt {
     }
 
     /**
+     * Makes the instance into a <code>String</code>
      *
-     * @return
+     * @return Tbe instance as a <code>String</code>
      */
     @Override
     public String toString() {
