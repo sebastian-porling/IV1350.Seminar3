@@ -18,3 +18,12 @@ I removed these classes as they are the same as the class "Amount". It's only a 
 
 When looking at the design and at the base code it seems that both Sale and SaleInformation are the same classes.
 Sale is like a wrapper of SaleInformation.
+
+### Decided to not to discounts
+
+Did not have the time to add the discount flow.
+
+### Added methods to sale
+
+I needed to add a getter to the sale class as the external inventory system needs to get information about the items.
+
