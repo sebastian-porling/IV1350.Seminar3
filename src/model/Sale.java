@@ -1,4 +1,99 @@
 package model;
 
+import integration.Item;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+
+/**
+ * Represents a point of sale between a customer and a cashier.
+ */
 public class Sale {
+    private Total total;
+    private HashMap<String, Item> items = new HashMap<>();
+
+    /**
+     *  Creates a new instance, represented as a Sale.
+     */
+    public Sale(){
+        this.total = new Total();
+    }
+
+    /**
+     * Gets the value of total.
+     *
+     * @return The value of total.
+     */
+    public Total getTotal() {
+        return total;
+    }
+
+    /**
+     * Gets the HashMap items.
+     *
+     * @return The HashMap items.
+     */
+    public HashMap<String, Item> getItems(){
+        return items;
+    }
+
+    /**
+     *  Updates the current sale. Updates how many items and the running total.
+     *
+     * @param item The item that will be added to the sale.
+     * @return  The itemDescription as a string.
+     */
+    public String updateSale(Item item){
+        if (items.containsKey(item.getItemIdentifier())) {
+            Item oldItem = items.get(item.getItemIdentifier());
+            oldItem.increaseQuantity(item.getQuantity());
+            items.put(oldItem.getItemIdentifier(), oldItem);
+            total.updateTotal(item);
+        } else {
+            items.put(item.getItemIdentifier(), item);
+            total.updateTotal(item);
+        }
+        return item.getItemDescription().toString();
+    }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        Iterator entriesIterator = getEntries();
+
+        while(entriesIterator.hasNext()) {
+            Item item = getCurrentItem();
+
+            builder.append(nextItem.getItemDescription().toString());
+            addNewLine(builder, " quantity: " + nextItem.getQuantity().toString());
+        }
+
+        addNewLine(builder, "Total: " + total.getTotal().toString());
+        addNewLine(builder, "Tax: " + total.getTotalTax());
+        return builder.toString();
+    }
+
+    private Iterator getEntries(){
+        Set entries = items.entrySet();
+        Iterator entriesIterator = entries.iterator();
+        return entriesIterator;
+    }
+
+    private Item getNextItem(){
+        Map.Entry mapping = (Map.Entry) entriesIterator.next();
+        Item item = (Item) mapping.getValue();
+        return item;
+    }
+
+    private void addNewLine(StringBuilder builder, String line){
+        builder.append(line);
+        builder.append("\n");
+    }
 }
