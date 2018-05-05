@@ -7,8 +7,8 @@ import integration.SystemCreator;
 import view.View;
 
 /**
- * Contains the <code>main</code> method. Performs all startup of the
- * application.
+ * Contains the <code>main</code> method.
+ * Performs all startup of the application.
  */
 public class Main {
 
