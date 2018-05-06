@@ -6,7 +6,7 @@ This are the changes from the design.
 
 I'm removing tax rate as i don't really find it necessery. It should be enough to use "Tax Amount".
 
-### Reniming ItemDescription
+### Renaming ItemDescription
 
 I renamed ItemDescription to ItemDTO, because it does not have any logic.
 
