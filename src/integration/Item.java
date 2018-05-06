@@ -24,21 +24,21 @@ public class Item {
     }
 
     /**
-     * Will increase the quantity of items with the specified <code>Amount</code>
+     * Will increase the quantity of items with the specified {@link Amount}
      *
-     * @param otherQuantity The <code>Amount</code> that will be added to the quantity.
+     * @param otherQuantity The {@link Amount} that will be added to the quantity.
      */
     public void increaseQuantity(Amount otherQuantity){
-        this.quantity.plus(otherQuantity);
+        this.quantity = this.quantity.plus(otherQuantity);
     }
 
     /**
-     * Will decrease the quantity of items with the specified <code>Amount</code>
+     * Will decrease the quantity of items with the specified {@link Amount}
      *
-     * @param otherQuantity The <code>Amount</code> that will be subtracted to the quantity.
+     * @param otherQuantity The {@link Amount} that will be subtracted to the quantity.
      */
     public void decreaseQuantity(Amount otherQuantity){
-        this.quantity.minus(otherQuantity);
+        this.quantity = this.quantity.minus(otherQuantity);
     }
 
     /**
@@ -53,7 +53,7 @@ public class Item {
     /**
      * Get the value of itemDescription.
      *
-     * @return
+     * @return The value of itemDescription
      */
     public ItemDTO getItemDescription() {
         return itemDescription;
@@ -75,11 +75,10 @@ public class Item {
      */
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("item identifier: " + itemIdentifier);
-        builder.append("quantity: " + quantity);
-        builder.append("item description: " + itemDescription.toString());
-        return builder.toString();
+        String builder = ("item identifier: " + itemIdentifier) +
+                "quantity: " + quantity +
+                "item description: " + itemDescription.toString();
+        return builder;
     }
 
     /**

@@ -47,16 +47,28 @@ public class Sale {
      * @return  The itemDescription as a string.
      */
     public String updateSale(Item item){
-        if (items.containsKey(item.getItemIdentifier())) {
-            Item oldItem = items.get(item.getItemIdentifier());
-            oldItem.increaseQuantity(item.getQuantity());
-            items.put(oldItem.getItemIdentifier(), oldItem);
-            total.updateTotal(item);
+        if (itemListContains(item)) {
+            updateItemQuantityAndTotal(item);
         } else {
-            items.put(item.getItemIdentifier(), item);
-            total.updateTotal(item);
+            addItemAndUpdateTotal(item);
         }
         return item.getItemDescription().toString();
+    }
+
+    private boolean itemListContains(Item item){
+        return items.containsKey(item.getItemIdentifier());
+    }
+
+    private void updateItemQuantityAndTotal(Item item){
+        Item oldItem = items.get(item.getItemIdentifier());
+        oldItem.increaseQuantity(item.getQuantity());
+        items.put(oldItem.getItemIdentifier(), oldItem);
+        total.updateTotal(item);
+    }
+
+    private void addItemAndUpdateTotal(Item item){
+        items.put(item.getItemIdentifier(), item);
+        total.updateTotal(item);
     }
 
     /**
@@ -82,14 +94,12 @@ public class Sale {
 
     private Iterator getEntries(){
         Set entries = items.entrySet();
-        Iterator entriesIterator = entries.iterator();
-        return entriesIterator;
+        return entries.iterator();
     }
 
     private Item getCurrentItem(Iterator entriesIterator){
         Map.Entry mapping = (Map.Entry) entriesIterator.next();
-        Item item = (Item) mapping.getValue();
-        return item;
+        return (Item) mapping.getValue();
     }
 
     private void addNewLine(StringBuilder builder, String line){

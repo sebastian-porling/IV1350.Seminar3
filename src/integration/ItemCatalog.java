@@ -8,7 +8,7 @@ import java.util.HashMap;
  * Represents a dummy item database.
  */
 public class ItemCatalog {
-    HashMap<String, ItemDTO> itemList = new HashMap<>();
+    private HashMap<String, ItemDTO> itemList = new HashMap<>();
 
     /**
      *  Creates a instance of a dummy item database.

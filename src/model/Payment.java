@@ -12,8 +12,8 @@ public class Payment {
     /**
      * Creates a new instance, represented as a payment.
      *
-     * @param paidAmount
-     * @param total
+     * @param paidAmount The amount money the customer have given.
+     * @param total The total that will that will be payed for by the customer.
      */
     public Payment(Amount paidAmount, Total total){
         this.paidAmount = paidAmount;
@@ -25,14 +25,14 @@ public class Payment {
      *
      * @return The total cost.
      */
-    public Total getTotal() {
+    Total getTotal() {
         return total;
     }
 
     /**
-     *  Calculates the amount of change and returns it as an <code>Amount</code>
+     *  Calculates the amount of change and returns it as an {@link Amount}
      *
-     * @return The total change as <code>Amount</code>
+     * @return The total change as {@link Amount}
      */
     public Amount getChange(){
         return paidAmount.minus(total.getTotalWithTax());

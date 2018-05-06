@@ -37,7 +37,7 @@ public class Total {
     }
 
     /**
-     *  Adds the tax to the total and returns it as a new <code>Amount</code>
+     *  Adds the tax to the total and returns it as a new {@link Amount}
      *
      * @return The total with taxes.
      */
@@ -51,6 +51,9 @@ public class Total {
      * @param item The item that will be added to the total, have information about how many items there are and the price and tax.
      */
     public void updateTotal(Item item){
+        if(item == null){
+            return;
+        }
         Amount amountOfItems = item.getQuantity();
         Amount itemPrice = item.getItemDescription().getPrice();
         Amount itemTax = item.getItemDescription().getTaxAmount();

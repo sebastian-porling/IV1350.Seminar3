@@ -59,11 +59,10 @@ public class ItemDTO {
      */
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("item name: " + itemName + "\t");
-        builder.append("price: " + price + "\t");
-        builder.append("tax amount: " + taxAmount + "\t");
-        return builder.toString();
+        String builder = "item name: " + itemName + "\t" +
+                "price: " + price + "\t" +
+                "tax amount: " + taxAmount + "\t";
+        return builder;
     }
 
     /**

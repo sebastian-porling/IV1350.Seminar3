@@ -43,17 +43,21 @@ public class Controller {
     }
 
     /**
-     *  If the item identifier exists we will add it to the sale and return information about the item and show the running total.
+     *  If the item identifier exists we will add it to the sale and
+     *  return information about the item and show the running total.
      *  Else we will just show the running total
      *
      * @param itemIdentifier The item we are going to add to the sale.
      * @param quantity The amount of that item.
-     * @return If <code>Item</code> exists we return a string with information about the item and the running total, else we return a string with the running total.
+     * @return If <code>Item</code> exists we return a string with
+     * information about the item and the running total,
+     * else we return a string with the running total.
      */
     public String registerItem(String itemIdentifier, Amount quantity){
         if (itemCatalog.itemExists(itemIdentifier)){
             Item item = itemCatalog.getItem(itemIdentifier, quantity);
-            return sale.updateSale(item) + ", quantity: " + quantity.toString() +  ", running total:  " + displayTotal();
+            return sale.updateSale(item) + ", quantity: " + quantity.toString() +
+                    ", running total:  " + displayTotal();
         }
         return "running total: " + displayTotal();
     }

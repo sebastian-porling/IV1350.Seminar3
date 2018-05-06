@@ -36,8 +36,10 @@ public class View {
         System.out.println(out);
         out = controller.registerItem("Paprika", new Amount(2));
         System.out.println(out);
+        System.out.println("Cashier displays the total with taxes. \n");
         out = controller.displayTotalWithTax();
         System.out.println(out);
+        System.out.println("Cashier enters the paid amount. \n");
         out = controller.pay(new Amount(2000));
         System.out.println(out);
     }

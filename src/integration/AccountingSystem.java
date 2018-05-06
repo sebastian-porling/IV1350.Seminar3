@@ -9,7 +9,7 @@ import java.util.HashMap;
  * Represents an external dummy accounting system
  */
 public class AccountingSystem {
-    HashMap<LocalDateTime, Sale> accounting = new HashMap();
+    private HashMap<LocalDateTime, Sale> accounting = new HashMap();
 
     /**
      *  Creates a new instance, representing a dummy accounting system.

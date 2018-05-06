@@ -4,7 +4,6 @@ import model.Sale;
 import util.Amount;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -29,18 +28,29 @@ public class InventorySystem {
     public void updateInventory(Sale sale){
         HashMap<String, Item> items = sale.getItems();
         Set entries = items.entrySet();
-        Iterator entriesIterator = entries.iterator();
 
-        while(entriesIterator.hasNext()) {
-            Map.Entry mapping = (Map.Entry) entriesIterator.next();
-            Item item = (Item) mapping.getValue();
+        for (Object entry : entries) {
+            Item item = getCurrentItem(entry);
 
-            if (inventory.containsKey(item.getItemIdentifier())) {
-                Item oldItem = inventory.get(item.getItemIdentifier());
-                oldItem.decreaseQuantity(item.getQuantity());
-                inventory.put(oldItem.getItemIdentifier(), oldItem);
+            if (itemExistsInInventory(item)) {
+                decreaseQuantityOfItem(item);
             }
         }
+    }
+
+    private boolean itemExistsInInventory(Item item){
+        return inventory.containsKey(item.getItemIdentifier());
+    }
+
+    private void decreaseQuantityOfItem(Item item){
+        Item oldItem = inventory.get(item.getItemIdentifier());
+        oldItem.decreaseQuantity(item.getQuantity());
+        inventory.put(oldItem.getItemIdentifier(), oldItem);
+    }
+
+    private Item getCurrentItem(Object entry){
+        Map.Entry mapping = (Map.Entry) entry;
+        return (Item) mapping.getValue();
     }
 
     private void addItems(){
