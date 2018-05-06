@@ -42,6 +42,7 @@ public class Sale {
 
     /**
      * Updates the current sale. Updates how many items and the running total.
+     * Can't take null items.
      *
      * @param item The item that will be added to the sale.
      * @return  The itemDescription as a string.

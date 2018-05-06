@@ -16,6 +16,15 @@ public class CashRegister {
     }
 
     /**
+     * Gets the value of balance.
+     *
+     * @return The value of balance.
+     */
+    public Amount getBalance() {
+        return balance;
+    }
+
+    /**
      * Updates the balance wth the specified payment.
      *
      * @param payment The amount of money that will be added to the balance of the cash register.
