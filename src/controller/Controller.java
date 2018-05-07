@@ -9,6 +9,10 @@ import util.Amount;
 
 /**
  *  The Point-of-sale applications only controller, all calls to the model is passed through here.
+ *  For the application to work as expected its methods have to be called in this order
+ *  1.  startNewSale() - You need to init a new sale before doing something else.
+ *  2.  registerItem() and displayTotalWithTax() - Can be run any time between 1. and 2.
+ *  3.  pay() - Ends the sale, so it has to be last.
  */
 public class Controller {
     private AccountingSystem accountingSystem;
@@ -49,7 +53,7 @@ public class Controller {
      *
      * @param itemIdentifier The item we are going to add to the sale.
      * @param quantity The amount of that item.
-     * @return If <code>Item</code> exists we return a string with
+     * @return If {@link Item} exists we return a string with
      * information about the item and the running total,
      * else we return a string with the running total.
      */
@@ -57,7 +61,7 @@ public class Controller {
         if (itemCatalog.itemExists(itemIdentifier)){
             Item item = itemCatalog.getItem(itemIdentifier, quantity);
             return sale.updateSale(item) + ", quantity: " + quantity.toString() +
-                    ", running total:  " + displayTotal();
+                    ", running total: " + displayTotal();
         }
         return "running total: " + displayTotal();
     }
@@ -76,7 +80,7 @@ public class Controller {
     }
 
     /**
-     * Makes a payment with the given <code>Amount</code>. Will be added to the balance of the cashRegister.
+     * Makes a payment with the given {@link Amount}. Will be added to the balance of the cashRegister.
      * The external system will be updated, and a receipt will be created and printed by the printer.
      *
      * @param paidAmount The amount of money given by the customer.
@@ -89,6 +93,7 @@ public class Controller {
         inventorySystem.updateInventory(sale);
         Receipt receipt = new Receipt(sale);
         printer.printReceipt(receipt);
+        sale = null;
         return "Change: " + payment.getChange().toString();
     }
 
